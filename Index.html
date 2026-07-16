@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        /* 
+           CSS Reset and Base Styles 
+           - Font: Cambria as requested
+           - Size: 14px base size
+           - Background: Light Blue
+        */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cambria', 'Times New Roman', serif;
+            font-size: 14px;
+            background-color: #ADD8E6; /* Light Blue */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 
+           Grid Box Layout 
+           - Uses CSS Grid to create a structured container
+        */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.5); /* Slight white overlay for readability */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center; /* Center-aligned content */
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #00008B; /* Dark Blue for contrast */
+            margin-bottom: 10px;
+        }
+
+        /* 
+           Scrolling Text Implementation 
+           - Uses CSS Keyframes for smooth, modern scrolling 
+           - Replaces deprecated <marquee> tag for better technical accuracy
+        */
+        .scrolling-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            background-color: #e0f7fa;
+            padding: 10px 0;
+            border: 1px solid #87CEEB;
+            border-radius: 5px;
+        }
+
+        .scrolling-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 15s linear infinite;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Image Grid Section */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .image-box {
+            background-color: #fff;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #0000FF;
+            color: #0000FF;
+            font-style: italic;
+        }
+
+        /* 
+           Button Styling 
+           - Blue button with white text
+        */
+        .action-button {
+            background-color: #0000FF; /* Pure Blue */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-family: 'Cambria', serif;
+            font-size: 16px; /* Slightly larger for button readability */
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .action-button:hover {
+            background-color: #00008B; /* Darker blue on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- Title -->
+        <header>
+            <h1>Welcome to My Website</h1>
+            <p>This page demonstrates CSS Grid, Animations, and Typography.</p>
+        </header>
+
+        <!-- Scrolling Text Section -->
+        <section class="scrolling-wrapper">
+            <div class="scrolling-text">
+                Welcome to our digital space! We use modern CSS animations for smooth scrolling effects. &nbsp;&nbsp;&nbsp; Explore our grid layout below.
+            </div>
+        </section>
+
+        <!-- Grid Layout for Images/Content -->
+        <section class="image-grid">
+            <div class="image-box">Image Placeholder 1</div>
+            <div class="image-box">Image Placeholder 2</div>
+            <div class="image-box">Image Placeholder 3</div>
+        </section>
+
+        <!-- Action Button -->
+        <footer>
+            <button class="action-button">Click Me</button>
+        </footer>
+    </div>
+
+</body>
+</html>
